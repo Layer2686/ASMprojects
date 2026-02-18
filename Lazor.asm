@@ -7,8 +7,8 @@ includelib \masm32\lib\kernel32.lib
 .data
 hConsoleOutput dd 0
 NumberOfCharsWritten dd 0
-Lazor db 'Lazor', 10, 13
-NumberOfCharsToWrite dd $- Lazor
+HelloMessage db 'Lazor', 10, 13
+NumberOfCharsToWrite dd $- HelloMessage
 .code
 start:
 push -11
@@ -17,7 +17,7 @@ mov hConsoleOutput, eax
 push 0
 push offset NumberOfCharsWritten
 push NumberOfCharsToWrite
-push offset Lazor
+push offset HelloMessage
 push hConsoleOutput
 call WriteConsoleA
 push 0
